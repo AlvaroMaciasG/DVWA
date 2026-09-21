@@ -92,5 +92,3 @@ jobs:
         with:
           target: 'http://localhost/'
           fail_action: false
-          target: 'http://localhost/'
-          fail_action: false
