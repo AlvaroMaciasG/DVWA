@@ -76,6 +76,9 @@ jobs:
     name: 5. Análisis DAST (OWASP ZAP)
     runs-on: ubuntu-latest
     needs: [Gitleaks, Semgrep, Dependency-Check, Trivy]
+    permissions:
+      contents: read
+      issues: write
     steps:
       - name: Desplegar DVWA localmente para DAST
         run: |
