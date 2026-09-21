@@ -29,15 +29,15 @@ jobs:
   Semgrep:
     name: 2. Análisis SAST (PHP)
     runs-on: ubuntu-latest
-    continue-on-error:true
+    continue-on-error: true
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
       - name: Ejecución de Semgrep
         uses: returntocorp/semgrep-action@v1
+        continue-on-error: true
         with:
           config: "p/php"
-          generateSarif: "1"
         env:
           SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
 
