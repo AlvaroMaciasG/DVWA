@@ -38,7 +38,7 @@ def check_once(url):
 
 def check(url):
     # We try for 5 times, with 3 seconds interval.
-    try_count = 1
+    try_count = 5
     try_interval = 3
     for i in range(try_count):
         ok, status_code = check_once(url)
@@ -60,7 +60,7 @@ def test_url():
         "http://www.w3.org/TR/html4/loose.dtd",
         # Don't need to check the DTD
 
-        # "https://twitter.com/digininja",
+        "https://twitter.com/digininja",
         # Twitter doesn't like GitHub checking it
 
         "https://www.cgisecurity.com/xss-faq.html",
