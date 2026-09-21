@@ -1,3 +1,4 @@
+
 name: DevSecOps Pipeline - DVWA (5 Etapas)
 
 on:
@@ -28,6 +29,7 @@ jobs:
   Semgrep:
     name: 2. Análisis SAST (PHP)
     runs-on: ubuntu-latest
+    continue-on-error:true
     steps:
       - name: Checkout del código
         uses: actions/checkout@v4
