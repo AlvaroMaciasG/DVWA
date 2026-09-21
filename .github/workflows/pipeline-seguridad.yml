@@ -84,8 +84,13 @@ jobs:
         run: |
           docker run -d -p 80:80 vulnerables/web-dvwa
           sleep 10
+      - name: Preparar permisos de escritura para ZAP
+        run: chmod -R a+rwx "$GITHUB_WORKSPACE"
+
       - name: Ejecutar OWASP ZAP Baseline Scan
         uses: zaproxy/action-baseline@v0.12.0
         with:
+          target: 'http://localhost/'
+          fail_action: false
           target: 'http://localhost/'
           fail_action: false
